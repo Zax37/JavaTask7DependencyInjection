@@ -10,7 +10,7 @@ import uj.jwzp.w4.model.Movie;
 public class SpringMain {
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext("uj.jwzp.w4.logic");
-        MovieLister lister = (MovieLister) ctx.getBean("movieLister");
+        MovieLister lister = (MovieLister) ctx.getBean("movieLister", args[0]);
 
         lister.moviesDirectedBy("Hoffman").stream()
                 .map(Movie::toString)

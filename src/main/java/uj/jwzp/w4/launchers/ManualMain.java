@@ -9,7 +9,7 @@ public class ManualMain {
     private static final String FILE_NAME = "movies.txt";
 
     public static void main(String[] args) {
-        MovieLister lister = new MovieLister();
+        MovieLister lister = new MovieLister(FILE_NAME);
         lister.moviesDirectedBy("Hoffman").stream()
             .map(Movie::toString)
             .forEach(log::info);

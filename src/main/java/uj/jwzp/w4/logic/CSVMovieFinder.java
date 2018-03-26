@@ -4,6 +4,7 @@ import io.vavr.control.Try;
 import lombok.extern.slf4j.Slf4j;
 import org.simpleflatmapper.csv.CsvParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import uj.jwzp.w4.model.Movie;
 
@@ -18,11 +19,11 @@ import static uj.jwzp.w4.tools.NullReader.nullReader;
 
 @Slf4j
 @Service
+@Scope("prototype")
 public class CSVMovieFinder implements MovieFinder {
 
     private final List<Movie> allMovies;
 
-    @Autowired
     public CSVMovieFinder(String fileName) {
         Reader reader = Try
             .of(() -> (Reader) new FileReader(fileName))

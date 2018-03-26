@@ -8,7 +8,6 @@ import uj.jwzp.w4.model.Movie;
 
 @Slf4j
 public class SpringMain {
-
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext("uj.jwzp.w4.logic");
         MovieLister lister = (MovieLister) ctx.getBean("movieLister");

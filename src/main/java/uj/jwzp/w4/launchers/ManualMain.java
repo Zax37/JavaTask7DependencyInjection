@@ -6,6 +6,7 @@ import uj.jwzp.w4.model.Movie;
 
 @Slf4j
 public class ManualMain {
+    private static final String FILE_NAME = "movies.txt";
 
     public static void main(String[] args) {
         MovieLister lister = new MovieLister();
